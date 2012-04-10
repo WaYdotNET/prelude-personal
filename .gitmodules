@@ -4,7 +4,3 @@
 [submodule "themes/color-theme-molokai"]
 	path = themes/color-theme-molokai
 	url = git://github.com/saimn/color-theme-molokai.git
-	url = git://github.com/zkim/emacs-dirtree.git
-[submodule "vendor/redmine"]
-	path = vendor/redmine
-	url = git://github.com/fukamachi/redmine-el.git
