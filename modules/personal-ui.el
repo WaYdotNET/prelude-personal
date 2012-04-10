@@ -67,7 +67,3 @@
 ;; redmine
 ;; https://github.com/fukamachi/redmine-el
 (require 'redmine)
-
-;; org-redmine
-;; https://github.com/hackers/org-redmine
-(require 'org-redmine)
