@@ -1,5 +1,5 @@
 (defvar prelude-personal-packages
-  '(csv-mode less-css-mode smex windmove textile-mode find-file-in-project full-ack )
+  '(csv-mode less-css-mode smex windmove textile-mode find-file-in-project full-ack popup auto-complete)
   "A list of packages to ensure are installed at launch.")
 
 (defun personal-packages-installed-p ()
