@@ -1,6 +1,9 @@
+;; add the first level subfolders of personal automatically
+(prelude-add-subfolders-to-load-path prelude-personal-dir)
+
 ;; load modules
 (defvar prelude-personal-modules-dir (concat prelude-personal-dir "modules/"))
-(add-to-list 'load-path prelude-personal-modules-dir)
+(prelude-add-subfolders-to-load-path prelude-personal-modules-dir)
 
 ;; load vendor
 (defvar prelude-personal-vendor-dir (concat prelude-personal-dir "vendor/"))
@@ -9,6 +12,7 @@
 ;; load themes
 (defvar prelude-personal-themes-dir (concat prelude-personal-dir "themes/"))
 (prelude-add-subfolders-to-load-path prelude-personal-themes-dir)
+
 
 (require 'personal-packages)
 (require 'personal-ui)

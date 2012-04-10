@@ -1,3 +1,6 @@
+;; restore-arrow-key
+(prelude-restore-arrow-keys)
+
 ;; use fuzzy style matching for commands aswell
 (require 'smex)
 (smex-initialize)
@@ -16,3 +19,5 @@
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 ;; This is your old M-x.
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
+
+(provide 'personal-core)

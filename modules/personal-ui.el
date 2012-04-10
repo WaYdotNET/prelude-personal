@@ -33,7 +33,7 @@
 
 (require 'color-theme-molokai)
 (color-theme-molokai)
-(require 'powerline)
+;; (require 'powerline)
 
 ;; highlight the current line; set a custom face, so we can
 ;; recognize from the normal marking (selection)
