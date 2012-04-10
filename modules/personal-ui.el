@@ -7,49 +7,37 @@
                                         ; side
 (linum-mode t)
 
-;; general settings
-(setq-default indent-tabs-mode nil)      ; I hate tabs!
 
-(delete-selection-mode t)                ; delete the selection with a keypress
+;; (delete-selection-mode t)                ; delete the selection with a keypress
 
-(unless (= emacs-major-version 24)
-  (setq x-select-enable-clipboard t       ; copy-paste should work ...
-        interprogram-paste-function       ; ...with...
-        'x-cut-buffer-or-selection-value)) ; ...other X clients
+;; (unless (= emacs-major-version 24)
+;;   (setq x-select-enable-clipboard t       ; copy-paste should work ...
+;;         interprogram-paste-function       ; ...with...
+;;         'x-cut-buffer-or-selection-value)) ; ...other X clients
 
-(setq search-highlight t                 ; highlight when searching...
-      query-replace-highlight t)         ; ...and replacing
-(fset 'yes-or-no-p 'y-or-n-p)            ; enable y/n answers to yes/no
+;; (setq search-highlight t                 ; highlight when searching...
+;;       query-replace-highlight t)         ; ...and replacing
+;; (fset 'yes-or-no-p 'y-or-n-p)            ; enable y/n answers to yes/no
 
-(global-font-lock-mode t)                ; always do syntax highlighting
-(setq require-final-newline t)           ; end files with a newline
+;; (global-font-lock-mode t)                ; always do syntax highlighting
+;; (setq require-final-newline t)           ; end files with a newline
 
-;; use shift + arrow keys to switch between visible buffers
-(require 'windmove)
-(windmove-default-keybindings 'super)
+;; ;; use shift + arrow keys to switch between visible buffers
+;; (require 'windmove)
+;; (windmove-default-keybindings 'super)
 
-;; automatic buffer clean-up
-(require 'midnight)
-;; don't kill my precious manuals while I'm still reading them
-(add-to-list 'clean-buffer-list-kill-never-buffer-names "*info*")
 
 ;; use Chromium Browser  as default browser
 (setq  browse-url-browser-function 'browse-url-generic
        browse-url-generic-program "/usr/bin/chromium-browser")
 
-;; https://github.com/zkim/emacs-dirtree
-(require 'dirtree)
-
 (require 'color-theme-molokai)
 (color-theme-molokai)
+(require 'powerline)
 
 ;; highlight the current line; set a custom face, so we can
 ;; recognize from the normal marking (selection)
 (global-hl-line-mode t) ; turn it on for all modes by default
-
-;; emacs nav - a simple file browser for Emacs
-(require 'nav)
-(setq nav-follow t)
 
 ;; full-ack.el
 (autoload 'ack-same "full-ack" nil t)
@@ -67,3 +55,64 @@
 ;; redmine
 ;; https://github.com/fukamachi/redmine-el
 (require 'redmine)
+
+;; sr-speedbar
+(require 'sr-speedbar)
+(speedbar-add-supported-extension ".rb")
+(speedbar-add-supported-extension ".ru")
+(speedbar-add-supported-extension ".yaml")
+(speedbar-add-supported-extension ".yml")
+(speedbar-add-supported-extension ".css")
+(speedbar-add-supported-extension ".sass")
+(speedbar-add-supported-extension ".scss")
+(speedbar-add-supported-extension ".haml")
+(speedbar-add-supported-extension ".feature")
+(speedbar-add-supported-extension ".config")
+(speedbar-add-supported-extension "Gemfile")
+(speedbar-add-supported-extension "Rakefile")
+(speedbar-add-supported-extension ".erb")
+(speedbar-add-supported-extension ".textile")
+(speedbar-add-supported-extension ".markdown")
+(speedbar-add-supported-extension ".less")
+(speedbar-add-supported-extension ".slim")
+(speedbar-add-supported-extension ".tt")
+(speedbar-add-supported-extension ".coffee")
+
+;; disable line numbers in the speedbar frame
+(add-to-list 'linum-disabled-modes-list '(speedbar-mode))
+
+;; (sr-speedbar-refresh-turn-off)
+;; show all files
+(setq speedbar-show-unknown-files t)
+
+;; turn off the ugly icons
+(setq speedbar-use-images nil)
+
+;; left-side pane
+(setq sr-speedbar-right-side nil)
+
+;; don't refresh on buffer changes
+(setq sr-speedbar-auto-refresh nil)
+
+;; nicer fonts for speedbar when in GUI
+(when (window-system)
+  ;; keep monospace buttons, but smaller height
+  (set-face-attribute 'speedbar-button-face nil :height 100)
+
+  ;; change to system default UI font for entries
+  (dolist (face (list 'speedbar-file-face 'speedbar-directory-face
+                      'speedbar-tag-face 'speedbar-selected-face
+                      'speedbar-highlight-face))
+    (if (eq system-type 'darwin) ;; Lucida Grande on OS X
+        (set-face-attribute face nil :family "Lucida Grande" :height 100)
+      (set-face-attribute face nil :family "Droid Sans" :height 100))))
+
+;; no left fringe and half-size right fringe. TODO: doesn't work
+(add-to-list 'speedbar-frame-parameters '(left-fringe . 0))
+(sr-speedbar-refresh-turn-off)
+;; (sr-speedbar-auto-refresh)
+;; (sr-speedbar-skip-other-window-p)
+(global-set-key (kbd "<f2>") 'sr-speedbar-toggle)
+
+
+(provide 'personal-ui)

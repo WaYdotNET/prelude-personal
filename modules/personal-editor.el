@@ -47,7 +47,6 @@
                (set-buffer-modified-p nil)))))))
 
 
-
 ;; Align command !!!
 
 ;; from http://stackoverflow.com/questions/3633120/emacs-hotkey-to-align-equal-signs

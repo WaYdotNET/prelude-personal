@@ -1,18 +1,20 @@
-(defvar prelude-personal-modules-dir (concat prelude-personal-dir "modules/")
-  "This directory houses all of the personal stuff.")
-
+;; load modules
+(defvar prelude-personal-modules-dir (concat prelude-personal-dir "modules/"))
 (add-to-list 'load-path prelude-personal-modules-dir)
+
+;; load vendor
+(defvar prelude-personal-vendor-dir (concat prelude-personal-dir "vendor/"))
+(prelude-add-subfolders-to-load-path prelude-personal-vendor-dir)
+
+;; load themes
+(defvar prelude-personal-themes-dir (concat prelude-personal-dir "themes/"))
+(prelude-add-subfolders-to-load-path prelude-personal-themes-dir)
 
 (require 'personal-packages)
 (require 'personal-ui)
 (require 'personal-core)
 (require 'personal-editor)
 (require 'personal-bindings)
-
-(require 'personal-cc)
-(require 'personal-css)
-(require 'personal-erc)
-(require 'personal-org)
 (require 'personal-ruby)
 
 ;; start edit server only when in daemon mode and the edit-server lib

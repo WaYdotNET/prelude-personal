@@ -2,6 +2,15 @@
 (require 'smex)
 (smex-initialize)
 
+;; Auto-complete
+(require 'auto-complete-config)
+(ac-config-default)
+;;fix flyspell shortcut
+(global-set-key (kbd "<C-tab>") 'flyspell-auto-correct-word)
+;;fix auto-complete
+(ac-flyspell-workaround)
+
+
 ;; define keybindings
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
