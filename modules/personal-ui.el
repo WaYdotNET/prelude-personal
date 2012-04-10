@@ -22,9 +22,9 @@
 ;; (global-font-lock-mode t)                ; always do syntax highlighting
 ;; (setq require-final-newline t)           ; end files with a newline
 
-;; ;; use shift + arrow keys to switch between visible buffers
-;; (require 'windmove)
-;; (windmove-default-keybindings 'super)
+;; ;; use meta + arrow keys to switch between visible buffers
+(require 'windmove)
+(windmove-default-keybindings 'meta)
 
 
 ;; use Chromium Browser  as default browser
