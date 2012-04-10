@@ -52,10 +52,6 @@
 (setq deft-directory "~/Dropbox/notes")
 (setq deft-text-mode 'textile-mode)
 
-;; redmine
-;; https://github.com/fukamachi/redmine-el
-(require 'redmine)
-
 ;; sr-speedbar
 (require 'sr-speedbar)
 (speedbar-add-supported-extension ".rb")
