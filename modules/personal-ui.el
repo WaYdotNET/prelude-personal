@@ -33,6 +33,9 @@
 
 (require 'color-theme-molokai)
 (color-theme-molokai)
+(custom-set-faces
+ '(whitespace-space ((t (:background "#1B1D1E"))))
+ )
 ;; (require 'powerline)
 
 ;; highlight the current line; set a custom face, so we can
