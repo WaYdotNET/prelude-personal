@@ -22,4 +22,7 @@
 
 (setq coffee-command "/usr/local/bin/coffee")
 
+;; delete trailing whitespace
+(add-hook 'before-save-hook (lambda () (delete-trailing-whitespace)))
+
 (provide 'personal-core)
