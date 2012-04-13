@@ -20,4 +20,6 @@
 ;; This is your old M-x.
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 
+(setq coffee-command "/usr/local/bin/coffee")
+
 (provide 'personal-core)
