@@ -32,7 +32,7 @@
 
 ;; comment line
 (global-set-key (kbd "M-7") 'comment-or-uncomment-current-line-or-region)
-(define-key ruby-mode-map (kbd "#") 'ruby-interpolate)
+;; (define-key ruby-mode-map (kbd "#") 'ruby-interpolate)
 
 ;; OCCUR
 (global-set-key (kbd "C-c C-o") 'occur)
