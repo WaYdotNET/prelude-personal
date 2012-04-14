@@ -26,6 +26,7 @@
 ;; (setq ruby-block-highlight-toggle 'overlay)
 
 ;; slim-mode settings
+(require 'slim-mode)
 (require 'less-css-mode)
 
 (provide 'personal-ruby)
