@@ -3,6 +3,9 @@
 (autoload 'find-file-in-project "find-file-in-project"
   "Find file in project." t)
 
+;; htmlize
+(require 'htmlize)
+
 ;; show ascii table
 ;; optained from http://www.chrislott.org/geek/emacs/dotemacs.html
 (defun ascii-table ()
