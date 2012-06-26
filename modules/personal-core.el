@@ -1,5 +1,5 @@
 ;; restore-arrow-key
-(prelude-restore-arrow-keys)
+;; (prelude-restore-arrow-keys)
 
 ;; use fuzzy style matching for commands aswell
 (require 'smex)

@@ -25,7 +25,7 @@
 (global-set-key (kbd "M-q") 'auto-complete-mode)
 
 ;; sr-speedbar
-(global-set-key (kbd "<f2>") 'sr-speedbar-toggle)
+(global-set-key (kbd "M-1") 'sr-speedbar-toggle)
 
 ;; dired
 (global-set-key (kbd "<f3>") 'dired)
