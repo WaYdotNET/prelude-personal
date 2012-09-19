@@ -13,7 +13,7 @@
 ;; useful, but WITHOUT ANY WARRANTY; without even the implied
 ;; warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
 ;; PURPOSE.  See the GNU General Public License for more details.
-;;
+;;}
 ;;; Commentary:
 ;; Customize `highlight-indentation-face', and
 ;; `highlight-indentation-current-column-face' to suit your theme.
@@ -130,6 +130,7 @@ a vertical bar corresponding to the indentation of the current line"
   (let ((indent (save-excursion (back-to-indentation) (current-column))))
     (when (and highlight-indentation-current-column-mode
                (> indent 1))
+      ;; (let* ((re (format "^ \\{%d\\}\\( \\)" indent))
       (let* ((re (format "^ \\{%d\\}\\( \\)" (1- indent)))
              (arg `((,re (1 'highlight-indentation-current-column-face prepend)))))
         (set (make-local-variable 'highlight-indentation-current-column-regex) arg)

@@ -22,7 +22,7 @@
 (global-set-key (kbd "C-x C-h") 'view-url)
 
 ;; auto-complete-mode
-(global-set-key (kbd "M-q") 'auto-complete-mode)
+(global-set-key (kbd "M-q") 'auto-complete-m)
 
 ;; sr-speedbar
 (global-set-key (kbd "M-1") 'sr-speedbar-toggle)
@@ -42,4 +42,6 @@
 ;; deft
 (global-set-key [f8] 'deft)
 
+;; whitespace
+(global-set-key (kbd "C-*") 'whitespace-mode)
 (provide 'personal-bindings)

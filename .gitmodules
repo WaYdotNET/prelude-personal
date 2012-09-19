@@ -1,9 +1,0 @@
-[submodule "powerline"]
-	path = vendor/powerline
-	url = git://github.com/yuanotes/powerline.git
-[submodule "themes/color-theme-molokai"]
-	path = themes/color-theme-molokai
-	url = git://github.com/saimn/color-theme-molokai.git
-[submodule "vendor/slim"]
-	path = vendor/slim
-	url = git://github.com/minad/emacs-slim.git

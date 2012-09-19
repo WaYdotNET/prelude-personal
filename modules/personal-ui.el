@@ -27,6 +27,10 @@
 (windmove-default-keybindings 'meta)
 
 
+;; indent hint
+;; https://github.com/ran9er/init.emacs/blob/master/20_indent-hint.el
+;;(require 'indent-hint)
+
 ;; use Chromium Browser  as default browser
 (setq  browse-url-browser-function 'browse-url-generic
        browse-url-generic-program "/usr/bin/chromium-browser")
@@ -35,6 +39,11 @@
 ;; (color-theme-molokai)
 (require 'molokai-theme)
 (custom-theme-set-faces 'molokai)
+
+(require 'highlight-indentation)
+(setq highlight-indentation-offset 2)
+(set-face-background 'highlight-indentation-face "#e3e3d3")
+(set-face-background 'highlight-indentation-current-column-face "#c3b3b3")
 
 (custom-set-faces
  '(whitespace-space ((t (:background "#1B1D1E"))))
@@ -46,6 +55,11 @@
 ;; highlight the current line; set a custom face, so we can
 ;; recognize from the normal marking (selection)
 (global-hl-line-mode t) ; turn it on for all modes by default
+
+;; (require 'highlight-indentation)
+;; (set-face-background 'highlight-indentation-face "#e3e3d3")
+;; (set-face-background 'highlight-indentation-current-column-face "#c3b3b3")
+;; (require 'stylus-mode)
 
 ;; full-ack.el
 (autoload 'ack-same "full-ack" nil t)
