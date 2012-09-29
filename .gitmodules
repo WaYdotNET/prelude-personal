@@ -1,6 +1,3 @@
-[submodule "vendor/highlight-indentation-for-emacs"]
-	path = vendor/highlight-indentation-for-emacs
-	url = git://github.com/jun0/Highlight-Indentation-for-Emacs.git
 [submodule "vendor/coffee-mode"]
 	path = vendor/coffee-mode
 	url = git://github.com/telaviv/coffee-mode.git
