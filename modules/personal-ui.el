@@ -27,20 +27,39 @@
 (windmove-default-keybindings 'meta)
 
 
+;; indent hint
+;; https://github.com/ran9er/init.emacs/blob/master/20_indent-hint.el
+;;(require 'indent-hint)
+
 ;; use Chromium Browser  as default browser
 (setq  browse-url-browser-function 'browse-url-generic
        browse-url-generic-program "/usr/bin/chromium-browser")
 
-(require 'color-theme-molokai)
-(color-theme-molokai)
+;; (require 'color-theme-molokai)
+;; (color-theme-molokai)
+(require 'molokai-theme)
+(custom-theme-set-faces 'molokai)
+
+(require 'highlight-indentation)
+(setq highlight-indentation-offset 2)
+(set-face-background 'highlight-indentation-face "#e3e3d3")
+(set-face-background 'highlight-indentation-current-column-face "#c3b3b3")
+
 (custom-set-faces
  '(whitespace-space ((t (:background "#1B1D1E"))))
  )
-;; (require 'powerline)
+(require 'powerline)
+(guru-mode -1)
+(powerline-default)
 
 ;; highlight the current line; set a custom face, so we can
 ;; recognize from the normal marking (selection)
 (global-hl-line-mode t) ; turn it on for all modes by default
+
+;; (require 'highlight-indentation)
+;; (set-face-background 'highlight-indentation-face "#e3e3d3")
+;; (set-face-background 'highlight-indentation-current-column-face "#c3b3b3")
+;; (require 'stylus-mode)
 
 ;; full-ack.el
 (autoload 'ack-same "full-ack" nil t)
@@ -77,41 +96,53 @@
 (speedbar-add-supported-extension ".tt")
 (speedbar-add-supported-extension ".coffee")
 
-;; disable line numbers in the speedbar frame
-(add-to-list 'linum-disabled-modes-list '(speedbar-mode))
+;; ;; disable line numbers in the speedbar frame
+;; (add-to-list 'linum-disabled-modes-list '(speedbar-mode))
 
-;; (sr-speedbar-refresh-turn-off)
-;; show all files
-(setq speedbar-show-unknown-files t)
+;; ;; (sr-speedbar-refresh-turn-off)
+;; ;; show all files
+;; (setq speedbar-show-unknown-files t)
 
-;; turn off the ugly icons
+;; ;; turn off the ugly icons
 (setq speedbar-use-images nil)
 
-;; left-side pane
+;; ;; left-side pane
 (setq sr-speedbar-right-side nil)
 
-;; don't refresh on buffer changes
+;; ;; don't refresh on buffer changes
 (setq sr-speedbar-auto-refresh nil)
 
-;; nicer fonts for speedbar when in GUI
-(when (window-system)
-  ;; keep monospace buttons, but smaller height
-  (set-face-attribute 'speedbar-button-face nil :height 100)
+;; ;; nicer fonts for speedbar when in GUI
+;; (when (window-system)
+;;   ;; keep monospace buttons, but smaller height
+;;   (set-face-attribute 'speedbar-button-face nil :height 100)
 
-  ;; change to system default UI font for entries
-  (dolist (face (list 'speedbar-file-face 'speedbar-directory-face
-                      'speedbar-tag-face 'speedbar-selected-face
-                      'speedbar-highlight-face))
-    (if (eq system-type 'darwin) ;; Lucida Grande on OS X
-        (set-face-attribute face nil :family "Lucida Grande" :height 100)
-      (set-face-attribute face nil :family "Droid Sans" :height 100))))
+;;   ;; change to system default UI font for entries
+;;   (dolist (face (list 'speedbar-file-face 'speedbar-directory-face
+;;                       'speedbar-tag-face 'speedbar-selected-face
+;;                       'speedbar-highlight-face))
+;;     (if (eq system-type 'darwin) ;; Lucida Grande on OS X
+;;         (set-face-attribute face nil :family "Lucida Grande" :height 100)
+;;       (set-face-attribute face nil :family "Droid Sans" :height 100))))
 
-;; no left fringe and half-size right fringe. TODO: doesn't work
-(add-to-list 'speedbar-frame-parameters '(left-fringe . 0))
-(sr-speedbar-refresh-turn-off)
+;; ;; no left fringe and half-size right fringe. TODO: doesn't work
+;; (add-to-list 'speedbar-frame-parameters '(left-fringe . 0))
+;; (sr-speedbar-refresh-turn-off)
 ;; (sr-speedbar-auto-refresh)
 ;; (sr-speedbar-skip-other-window-p)
-(global-set-key (kbd "<f2>") 'sr-speedbar-toggle)
+;; (global-set-key (kbd "<f2>") 'sr-speedbar-toggle)
+(set-default-font "Source Code Pro-11")
+;; (set-face-attribute face nil :family "Source Code Pro" :height 100)
+
+
+;; http://20seven.org/journal/2008/11/02/distraction-free-programming-with-gnu-emacs/
+;; full screen toggle using command+[RET]
+(defun toggle-fullscreen ()
+  (interactive)
+  (set-frame-parameter nil 'fullscreen (if (frame-parameter nil 'fullscreen)
+                                           nil
+                                         'fullboth)))
+(global-set-key [(meta return)] 'toggle-fullscreen)
 
 
 (provide 'personal-ui)

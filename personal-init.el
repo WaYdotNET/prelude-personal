@@ -10,8 +10,8 @@
 (prelude-add-subfolders-to-load-path prelude-personal-vendor-dir)
 
 ;; load themes
-(defvar prelude-personal-themes-dir (concat prelude-personal-dir "themes/"))
-(prelude-add-subfolders-to-load-path prelude-personal-themes-dir)
+;; (defvar prelude-personal-themes-dir (concat prelude-personal-dir "themes/"))
+;; (prelude-add-subfolders-to-load-path prelude-personal-themes-dir)
 
 
 (require 'personal-packages)

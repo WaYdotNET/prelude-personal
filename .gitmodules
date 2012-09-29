@@ -1,12 +1,6 @@
-[submodule "powerline"]
-	path = vendor/powerline
-	url = git://github.com/yuanotes/powerline.git
-[submodule "themes/color-theme-molokai"]
-	path = themes/color-theme-molokai
-	url = git://github.com/saimn/color-theme-molokai.git
-[submodule "vendor/slim"]
-	path = vendor/slim
-	url = git://github.com/minad/emacs-slim.git
 [submodule "vendor/highlight-indentation-for-emacs"]
 	path = vendor/highlight-indentation-for-emacs
 	url = git://github.com/jun0/Highlight-Indentation-for-Emacs.git
+[submodule "vendor/coffee-mode"]
+	path = vendor/coffee-mode
+	url = git://github.com/telaviv/coffee-mode.git

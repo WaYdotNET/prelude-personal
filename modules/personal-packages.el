@@ -1,7 +1,11 @@
 (defvar prelude-personal-packages
-  '(csv-mode less-css-mode smex textile-mode find-file-in-project full-ack popup auto-complete deft
-             prelude-css prelude-lisp prelude-programming prelude-ruby prelude-scheme prelude-scss prelude-xml sass-mode scss-mode rvm auto-complete
+  '(csv-mode less-css-mode smex textile-mode find-file-in-project full-ack
+             popup auto-complete deft prelude-css prelude-lisp
+             prelude-programming prelude-ruby prelude-scheme prelude-scss
+             prelude-xml sass-mode scss-mode rvm auto-complete
+             powerline molokai-theme pomodoro htmlize slim-mode
              )
+
   "A list of packages to ensure are installed at launch.")
 
 (defun personal-packages-installed-p ()
