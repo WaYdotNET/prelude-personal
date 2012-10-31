@@ -94,6 +94,8 @@
 (speedbar-add-supported-extension ".less")
 (speedbar-add-supported-extension ".slim")
 (speedbar-add-supported-extension ".tt")
+(speedbar-add-supported-extension ".md")
+(speedbar-add-supported-extension ".rdoc")
 (speedbar-add-supported-extension ".coffee")
 
 ;; ;; disable line numbers in the speedbar frame
@@ -132,7 +134,6 @@
 ;; (sr-speedbar-skip-other-window-p)
 ;; (global-set-key (kbd "<f2>") 'sr-speedbar-toggle)
 (set-default-font "Source Code Pro-11")
-;; (set-face-attribute face nil :family "Source Code Pro" :height 100)
 
 
 ;; http://20seven.org/journal/2008/11/02/distraction-free-programming-with-gnu-emacs/
@@ -144,5 +145,6 @@
                                          'fullboth)))
 (global-set-key [(meta return)] 'toggle-fullscreen)
 
+(add-hook 'prog-mode-hook 'whitespace-turn-off t)
 
 (provide 'personal-ui)
