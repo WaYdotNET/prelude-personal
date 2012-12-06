@@ -2,12 +2,12 @@
 (prelude-add-subfolders-to-load-path prelude-personal-dir)
 
 ;; load modules
-(defvar prelude-personal-modules-dir (concat prelude-personal-dir "modules/"))
-(prelude-add-subfolders-to-load-path prelude-personal-modules-dir)
+;;(defvar prelude-personal-modules-dir (concat prelude-personal-dir "modules/"))
+;;(prelude-add-subfolders-to-load-path prelude-personal-modules-dir)
 
 ;; load vendor
-(defvar prelude-personal-vendor-dir (concat prelude-personal-dir "vendor/"))
-(prelude-add-subfolders-to-load-path prelude-personal-vendor-dir)
+;;(defvar prelude-personal-vendor-dir (concat prelude-personal-dir "vendor/"))
+;;(prelude-add-subfolders-to-load-path prelude-personal-vendor-dir)
 
 ;; load themes
 ;; (defvar prelude-personal-themes-dir (concat prelude-personal-dir "themes/"))

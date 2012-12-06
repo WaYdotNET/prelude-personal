@@ -133,7 +133,7 @@
 ;; (sr-speedbar-auto-refresh)
 ;; (sr-speedbar-skip-other-window-p)
 ;; (global-set-key (kbd "<f2>") 'sr-speedbar-toggle)
-(set-default-font "Source Code Pro-11")
+(set-default-font "Source Code Pro-10")
 
 
 ;; http://20seven.org/journal/2008/11/02/distraction-free-programming-with-gnu-emacs/
