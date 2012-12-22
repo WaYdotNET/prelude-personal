@@ -145,6 +145,5 @@
                                          'fullboth)))
 (global-set-key [(meta return)] 'toggle-fullscreen)
 
-(add-hook 'prog-mode-hook 'whitespace-turn-off t)
-
+;;(setq prelude-whitespace t)
 (provide 'personal-ui)
