@@ -145,5 +145,25 @@
                                          'fullboth)))
 (global-set-key [(meta return)] 'toggle-fullscreen)
 
+;;;;;;; (require 'windows)
+;;;;;;; (require 'recentf)
+;;;;;;; ;; -- load the saved windows automatically on boot
+;;;;;;; (add-hook 'window-setup-hook 'resume-windows)
+;;;;;;; ;; -- save place in file
+;;;;;;; (setq-default save-place t)
+;;;;;;; ;; --  use this command to quit and save your setup
+;;;;;;; (define-key ctl-x-map "C" 'see-you-again)
+
+;;;;;;; ;; -- set up window saving !! Place at end of .emacs file
+;;;;;;; (win:startup-with-window)
 ;;(setq prelude-whitespace t)
+
+(require 'workgroups)
+(workgroups-mode 1)
+(setq wg-morph-on nil)
+(wg-load "~/.emacs.d/workgroup")
+;; (require 'wg-bufs)v
+;; (wg-b
+;; ufs-mode t)
+;; (require 'wg-tabs)
 (provide 'personal-ui)
