@@ -158,6 +158,11 @@
 ;;;;;;; (win:startup-with-window)
 ;;(setq prelude-whitespace t)
 
+;; https://github.com/antonj/Highlight-Indentation-for-Emacs/
+(set-face-background 'highlight-indentation-face "#222527")
+(set-face-background 'highlight-indentation-current-column-face "#a2d1ea")
+
+
 (require 'workgroups)
 (workgroups-mode 1)
 (setq wg-morph-on nil)
