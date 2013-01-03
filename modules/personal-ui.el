@@ -114,25 +114,7 @@
 ;; ;; don't refresh on buffer changes
 (setq sr-speedbar-auto-refresh nil)
 
-;; ;; nicer fonts for speedbar when in GUI
-;; (when (window-system)
-;;   ;; keep monospace buttons, but smaller height
-;;   (set-face-attribute 'speedbar-button-face nil :height 100)
 
-;;   ;; change to system default UI font for entries
-;;   (dolist (face (list 'speedbar-file-face 'speedbar-directory-face
-;;                       'speedbar-tag-face 'speedbar-selected-face
-;;                       'speedbar-highlight-face))
-;;     (if (eq system-type 'darwin) ;; Lucida Grande on OS X
-;;         (set-face-attribute face nil :family "Lucida Grande" :height 100)
-;;       (set-face-attribute face nil :family "Droid Sans" :height 100))))
-
-;; ;; no left fringe and half-size right fringe. TODO: doesn't work
-;; (add-to-list 'speedbar-frame-parameters '(left-fringe . 0))
-;; (sr-speedbar-refresh-turn-off)
-;; (sr-speedbar-auto-refresh)
-;; (sr-speedbar-skip-other-window-p)
-;; (global-set-key (kbd "<f2>") 'sr-speedbar-toggle)
 (set-default-font "Source Code Pro-10")
 
 
@@ -145,19 +127,6 @@
                                          'fullboth)))
 (global-set-key [(meta return)] 'toggle-fullscreen)
 
-;;;;;;; (require 'windows)
-;;;;;;; (require 'recentf)
-;;;;;;; ;; -- load the saved windows automatically on boot
-;;;;;;; (add-hook 'window-setup-hook 'resume-windows)
-;;;;;;; ;; -- save place in file
-;;;;;;; (setq-default save-place t)
-;;;;;;; ;; --  use this command to quit and save your setup
-;;;;;;; (define-key ctl-x-map "C" 'see-you-again)
-
-;;;;;;; ;; -- set up window saving !! Place at end of .emacs file
-;;;;;;; (win:startup-with-window)
-;;(setq prelude-whitespace t)
-
 ;; https://github.com/antonj/Highlight-Indentation-for-Emacs/
 (set-face-background 'highlight-indentation-face "#222527")
 (set-face-background 'highlight-indentation-current-column-face "#a2d1ea")
@@ -167,8 +136,5 @@
 (workgroups-mode 1)
 (setq wg-morph-on nil)
 (wg-load "~/.emacs.d/workgroup")
-;; (require 'wg-bufs)v
-;; (wg-b
-;; ufs-mode t)
-;; (require 'wg-tabs)
+
 (provide 'personal-ui)

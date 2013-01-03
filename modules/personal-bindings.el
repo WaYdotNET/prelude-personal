@@ -42,6 +42,9 @@
 ;; deft
 (global-set-key [f8] 'deft)
 
+;; highlight identation
+(global-set-key (kbd "M-2") 'highlight-indentation-mode)
+(global-set-key (kbd "M-3") 'highlight-indentation-current-column-mode)
 ;; whitespace
 (global-set-key (kbd "C-*") 'whitespace-mode)
 (provide 'personal-bindings)
